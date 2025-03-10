@@ -1,5 +1,5 @@
 .todo-input-btn{
-  background-color: rgb(47, 120, 126);
+  background-color: rgb(52, 22, 173);
   padding: 5px;
   border: none;
   border-radius: 5px;
@@ -9,5 +9,33 @@
   font-size: small;
 }
 .todo-input{
-  width: 400px;
+  width: 100%;
+}
+.todo-box{
+  background: #337e20;
+}
+.todo-lists{
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  padding: 1em;
+}
+.todo-container{
+  width: 600px;
+  background-color: rgb(99, 165, 38);
+}
+.btn-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.create-todo{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  padding: 1em;
+}
+.bg-prime{
+  background-color: rgb(65, 97, 34);
 }
