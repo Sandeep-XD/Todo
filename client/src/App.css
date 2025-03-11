@@ -10,6 +10,7 @@
 }
 .todo-input{
   width: 100%;
+  padding: 0px 15px;
 }
 .todo-box{
   background: #337e20;
