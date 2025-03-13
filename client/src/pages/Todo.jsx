@@ -5,19 +5,36 @@ import {TodoProvider} from '../contexts/TodoContext'
 import { useState, useEffect } from 'react'
 
 const Todo = () => {
- const [todos , setTodos]= useState([]);
+  const [todos , setTodos]= useState([]);
   const addTodo =(todo)=>{
-    setTodos((prev)=>[{id: Date.now(), ...todo},...prev])
+    setTodos((prev)=>[{id: Date.now(),completed:false, ...todo},...prev])
   }
   const updateTodo =(id , todo)=>{
-    setTodos((prev)=>prev.map((prevTodo)=>(prevTodo.id === id ? todo :prevTodo)))
+    setTodos((prev)=>prev.map((prevTodo)=>{
+      if(prevTodo.id === id){
+        return {...prevTodo,task:todo,id}
+      }else{
+        // console.log(prevTodo.id)
+        return prevTodo
+      }
+    }))
   }
-  const toggleTodo = (id)=>{}
-  const deleteTodo = (id)=>{}
+  const toggleTodo = (id)=>{
+    setTodos((prev)=>prev.map((prevTodo)=>{
+      if(prevTodo.id === id){
+        return {...prevTodo,completed:!prevTodo.completed}
+      }else{
+        return prevTodo
+      }
+    }))
+  }
+  const deleteTodo = (id)=>{
+    setTodos((prev)=>prev.filter((prevTodo)=>prevTodo.id !== id))
+  }
 
   useEffect(() => {
     const storedTodos = localStorage.getItem('todos');
-    console.log(todos)
+    // console.log(storedTodos)
     if (storedTodos && storedTodos.length) {
       setTodos(JSON.parse(storedTodos));
       }
@@ -26,7 +43,7 @@ const Todo = () => {
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
-    console.log(todos)
+    // console.log(todos)
   }, [todos])
   
   

@@ -1,25 +1,32 @@
 import React, { useState } from 'react'
 import { useTodo } from '../../contexts/TodoContext'
 const TodoList = (todo) => {
-  const { todos, deleteTodo , toggleTodo } = useTodo()
+  const { deleteTodo , toggleTodo , updateTodo } = useTodo()
   const [toggle , setToggle] = useState(false)
-
+  const [editable , setEditable] = useState(false)
+  const [ id , setId ] = useState(todo.todo.id)
+  const [ task , setTask ] = useState(todo.todo.task)
   const handleToggle = ()=>{
-    setEditable((prev)=>!prev)
+    setToggle((prev)=>!prev)
+    toggleTodo(toggle)
   }
   const handleEdit = (e) =>{
-    e.preventDefault
-    console.log(todo)
-    if(edit){
+    e.preventDefault()
+    if(editable){
+      updateTodo(id,task)
     }
-    setEdit((prev)=>!prev)
+    setEditable((prev)=>!prev)
+    // setId(todo.id.id)
   }
+
+
   const handleField =(e)=>{
-
+    setTask(e.target.value)
   }
 
-  const handleDelete =()=>{
-    
+  const handleDelete =(e)=>{
+    e.preventDefault()
+    deleteTodo(id)
   }
   return (
     <div className='bg-prime flex rounded-sm p-1'>
@@ -27,18 +34,31 @@ const TodoList = (todo) => {
           <input 
               type='checkbox'
               onChange={handleToggle}
-
+						  checked = {todo.completed}
             />
           <input 
               className='todo-input'
               type="text"
-              placeholder={todo.task}
-              value={todo.task}
-              onChange={(e)=> e.target.value}
+              placeholder={task}
+              value={task}
+              onChange={handleField}
+              disabled={!editable}
             />
           <div className="btn-container">
-              <button className='todo-input-btn' type="submit">edit</button>
-              <button className='todo-input-btn' type="submit">delete</button>
+              <button
+                className='todo-input-btn' 
+                type="button"
+                onClick={handleEdit}
+              >
+                {editable? "ok" : "edit"}
+              </button>
+              <button 
+                className='todo-input-btn' 
+                type="button"
+                onClick={handleDelete}
+              >
+                delete
+              </button>
           </div>
         </form>
     </div>
