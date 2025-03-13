@@ -26,8 +26,6 @@ const TodoList = (todo) => {
         <form className='container gap-2 justify-between'>
           <input 
               type='checkbox'
-              checked = {editable}
-						//checked = {todo.completed}
               onChange={handleToggle}
 
             />
