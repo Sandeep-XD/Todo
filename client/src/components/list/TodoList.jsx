@@ -8,7 +8,8 @@ const TodoList = (todo) => {
   const [ task , setTask ] = useState(todo.todo.task)
   const handleToggle = ()=>{
     setToggle((prev)=>!prev)
-    toggleTodo(toggle)
+    // console.log(toggle)
+    toggleTodo(id)
   }
   const handleEdit = (e) =>{
     e.preventDefault()

@@ -22,6 +22,7 @@ const Todo = () => {
   const toggleTodo = (id)=>{
     setTodos((prev)=>prev.map((prevTodo)=>{
       if(prevTodo.id === id){
+        // console.log(prevTodo.completed)
         return {...prevTodo,completed:!prevTodo.completed}
       }else{
         return prevTodo

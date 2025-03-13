@@ -6,13 +6,15 @@ const [todo , setTodo]= useState({})
   const [task , setTask] = useState('')
   const handleSubmit = (e)=>{
     e.preventDefault()
-    setTodo({
-      task:task
-    })
+    if(task&&task.length){
+      setTodo({
+        task:task
+      })
+      addTodo({...todo , task})
+    }
     // console.log(task)
     // addTodo({id: Date.now(), task:task , completed: false})
     // addTodo({...todo, task:task, completed: false})
-    addTodo({...todo , task})
     setTask('')
   }
   return (
