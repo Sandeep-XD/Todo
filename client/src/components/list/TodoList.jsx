@@ -16,7 +16,6 @@ const TodoList = (todo) => {
       updateTodo(id,task)
     }
     setEditable((prev)=>!prev)
-    // setId(todo.id.id)
   }
 
 
@@ -30,7 +29,7 @@ const TodoList = (todo) => {
   }
   return (
     <div className='bg-prime flex rounded-sm p-1'>
-        <form className='container gap-2 justify-between'>
+        <div className='container gap-2 justify-between'>
           <input 
               type='checkbox'
               onChange={handleToggle}
@@ -60,7 +59,7 @@ const TodoList = (todo) => {
                 delete
               </button>
           </div>
-        </form>
+        </div>
     </div>
   )
 }
