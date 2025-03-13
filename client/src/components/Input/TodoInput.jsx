@@ -5,7 +5,7 @@ const TodoInput = () => {
   const [task , setTask] = useState('')
   const handleSubmit = (e)=>{
     e.preventDefault()
-    console.log(task)
+    // console.log(task)
     addTodo({id: Date.now(), task:task , completed: false})
   }
   return (

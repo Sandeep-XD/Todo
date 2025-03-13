@@ -45,7 +45,9 @@ const Todo = () => {
           <div className="todo-lists">
             <h1>Todo list</h1>
             {todos.map((todo)=>(
-              <TodoList task = {todo.task}/>
+              <div key={todo.id}>
+                <TodoList todo = {{...todo}}/>
+              </div>
             ))}
           </div>
         </div>
