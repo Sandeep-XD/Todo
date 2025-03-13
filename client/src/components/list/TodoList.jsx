@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import { useTodo } from '../../contexts/TodoContext'
 const TodoList = (todo) => {
-  const { todos, deleteTodo , toggleTodo , updateTodo} = useTodo()
+  const { todos, deleteTodo , toggleTodo } = useTodo()
   const [toggle , setToggle] = useState(false)
-  const [edit, setEdit ] = useState(true)
-  const [task , setTask] = useState(todo.todo.task)
-  const [taskId , setTaskId] = useState(todo.todo.id)
+
   const handleToggle = ()=>{
-    setToggle((prev)=>!prev)
+    setEditable((prev)=>!prev)
   }
   const handleEdit = (e) =>{
     e.preventDefault
@@ -28,31 +26,21 @@ const TodoList = (todo) => {
         <form className='container gap-2 justify-between'>
           <input 
               type='checkbox'
-              checked = {toggle}
+              checked = {editable}
+						//checked = {todo.completed}
               onChange={handleToggle}
+
             />
           <input 
               className='todo-input'
               type="text"
-              placeholder={task}
-              value={task}
-              onChange={handleField}
+              placeholder={todo.task}
+              value={todo.task}
+              onChange={(e)=> e.target.value}
             />
           <div className="btn-container">
-              <button 
-                className='todo-input-btn'
-                type="button"
-                onClick={handleEdit}
-              >
-                {edit ? "edit" : "ok"}
-                </button>
-              <button 
-                className='todo-input-btn' 
-                type="button"
-                onClick={handleDelete}
-              >
-                delete
-                </button>
+              <button className='todo-input-btn' type="submit">edit</button>
+              <button className='todo-input-btn' type="submit">delete</button>
           </div>
         </form>
     </div>
