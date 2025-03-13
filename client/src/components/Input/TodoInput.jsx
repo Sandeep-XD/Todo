@@ -28,7 +28,6 @@ const [todo , setTodo]= useState({})
                 type="text"
                 placeholder="Enter a task"
                 value={task}
-                // onChange={(e) => {setTask(e.target.value)}}
                 onChange={(e)=> setTask(e.target.value)}
               />
             <button className='todo-input-btn' type="submit" >Add</button>

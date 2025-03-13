@@ -6,6 +6,7 @@ const TodoList = (todo) => {
   const [editable , setEditable] = useState(false)
   const [ id , setId ] = useState(todo.todo.id)
   const [ task , setTask ] = useState(todo.todo.task)
+
   const handleToggle = ()=>{
     setToggle((prev)=>!prev)
     // console.log(toggle)
@@ -19,7 +20,6 @@ const TodoList = (todo) => {
     setEditable((prev)=>!prev)
   }
 
-
   const handleField =(e)=>{
     setTask(e.target.value)
   }
@@ -28,6 +28,7 @@ const TodoList = (todo) => {
     e.preventDefault()
     deleteTodo(id)
   }
+
   return (
     <div className='bg-prime flex rounded-sm p-1'>
         <div className='container gap-2 justify-between'>
