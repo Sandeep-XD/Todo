@@ -37,14 +37,17 @@ const TodoList = (todo) => {
               onChange={handleToggle}
 						  checked = {todo.completed}
             />
-          {editable?<input 
+          {editable?
+          <input 
               className='todo-input'
               type="text"
               placeholder={task}
               value={task}
               onChange={handleField}
               disabled={!editable}
-            />:<h3>{task}</h3>}
+            />:
+          <p className='todo-input'>{task}</p>
+          }
           <div className="btn-container">
               <button
                 className='todo-input-btn' 
