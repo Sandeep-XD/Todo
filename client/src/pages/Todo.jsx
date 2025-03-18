@@ -62,11 +62,12 @@ const Todo = () => {
           </div>
           <div className="todo-lists">
             <h1>Todo list</h1>
-            {todos.map((todo)=>(
+            {todos.length?
+            todos.map((todo)=>(
               <div key={todo.id}>
                 <TodoList todo = {{...todo}}/>
               </div>
-            ))}
+            )):<span className='bg-amber-950'>Empty todo list . Add new task to see it in the list</span>}
           </div>
         </div>
     </div>
