@@ -10,7 +10,7 @@ const Navbar = () => {
             </div>
             <div className="flex gap-5">
                 <NavLink className="navbar-brand" to="/about">About</NavLink>
-                <NavLink className="navbar-brand" to="/credit">Credits</NavLink>
+                <NavLink className="navbar-brand" to="/credit">Credit</NavLink>
             </div>
         </nav>
     </div>
