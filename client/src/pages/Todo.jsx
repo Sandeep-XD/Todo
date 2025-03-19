@@ -12,7 +12,7 @@ const Todo = () => {
             <TodoInput/>
           </div>
           <div className="todo-lists">
-            <h1>Todo list</h1>
+            <h1>Todo lists</h1>
             <TodoList/>
             <TodoList/>
             <TodoList/>
