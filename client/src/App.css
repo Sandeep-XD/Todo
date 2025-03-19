@@ -10,6 +10,7 @@
 }
 .todo-input{
   width: 100%;
+  padding: 0px 15px;
 }
 .todo-box{
   background: #337e20;
@@ -21,8 +22,10 @@
   padding: 1em;
 }
 .todo-container{
-  width: 600px;
-  background-color: rgb(99, 165, 38);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  background-color: rgb(0, 0, 0);
 }
 .btn-container{
   display: flex;
