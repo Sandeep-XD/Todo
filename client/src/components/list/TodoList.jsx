@@ -30,24 +30,26 @@ const TodoList = (todo) => {
   }
 
   return (
-    <div className='bg-prime flex rounded-sm p-1'>
+    <div className='bg-prime min-w-[300px] flex rounded-sm p-1'>
         <div className='container gap-2 justify-between'>
-          <input 
-              type='checkbox'
-              onChange={handleToggle}
-						  checked = {todo.completed}
-            />
-          {editable?
-          <input 
-              className='todo-input'
-              type="text"
-              placeholder={task}
-              value={task}
-              onChange={handleField}
-              disabled={!editable}
-            />:
-          <p className='todo-input'>{task}</p>
-          }
+          <div className='flex gap-2'>
+            <input 
+                type='checkbox'
+                onChange={handleToggle}
+                checked = {todo.completed}
+              />
+            {editable?
+            <input 
+                className='todo-input'
+                type="text"
+                placeholder={task}
+                value={task}
+                onChange={handleField}
+                disabled={!editable}
+              />:
+            <h className='todo-input'>{task}</h>
+            }
+          </div>
           <div className="btn-container">
               <button
                 className='todo-input-btn' 

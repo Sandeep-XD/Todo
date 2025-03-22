@@ -55,19 +55,28 @@ const Todo = () => {
     >
     <div className='container flex-col gap-2 todo-box p-5 rounded-md'>
         <h1 className='p-3'>Your Daily Todo App</h1>
-        <div className="todo-container">
+        <div className="todo-container md:flex min-h-[60vh]">
           <div className="create-todo">
             <h1>Create a Todo</h1>
-            <TodoInput/>
+            <div className="add-todo flex w-[300px] mx-auto">
+              <TodoInput/>
+            </div>
           </div>
-          <div className="todo-lists">
-            <h1>Todo list</h1>
-            {todos.length?
-            todos.map((todo)=>(
-              <div key={todo.id}>
-                <TodoList todo = {{...todo}}/>
-              </div>
-            )):<span className='bg-amber-950'>Empty todo list . Add new task to see it in the list</span>}
+          <div className="todo-list mx-5 flex flex-col items-center">
+            <h1 className='w-full m-3'>Todo list</h1>
+            <div className="todo-items">
+            {
+              todos.length ?
+                todos.map((todo)=>(
+                  <div className='todo-lists' key={todo.id}>
+                    <TodoList todo = {{...todo}}/>
+                  </div>
+                ))
+                :<span className='bg-amber-950'>
+                  Empty todo list . Add a new Task
+                  </span>
+            }
+            </div>
           </div>
         </div>
     </div>

@@ -18,19 +18,24 @@ const [todo , setTodo]= useState({})
     setTask('')
   }
   return (
-    <div className='bg-prime p-2 w-full rounded-sm'>
+    <div className='bg-prime p-2 rounded-sm'>
         <form 
             className='container justify-around gap-2'
             onSubmit={handleSubmit}
           >
             <input 
-                className='todo-input'
+                className='todo-input '
                 type="text"
                 placeholder="Enter a task"
                 value={task}
                 onChange={(e)=> setTask(e.target.value)}
               />
-            <button className='todo-input-btn' type="submit" >Add</button>
+            <button 
+              className='todo-input-btn' 
+              type="submit" 
+              >
+                Add
+            </button>
         </form>
     </div>
   )

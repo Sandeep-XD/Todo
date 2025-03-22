@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body{
-  background: #000;
+  background: #100b2e;
   color: #fff;
 }
 .container{
@@ -10,6 +10,6 @@ body{
   margin: auto;
 }
 .navbar{
-  background-color: #285479;
+  background-color: #4b2abe;
   padding: 1rem;
 }
