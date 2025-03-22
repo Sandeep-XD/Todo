@@ -4,7 +4,8 @@
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
-  font-weight: 400;
+  text-shadow: 1px 1px 3px rgb(243, 35, 243);
+  font-weight: 200;
   font-size: small;
   min-width: 50px;
 }
@@ -13,8 +14,7 @@
   padding: 0px 15px;
 }
 .todo-box{
-  background: #5d4baf;
-  width: 100%;
+  background: #337e20;
 }
 .todo-lists{
   display: flex;
