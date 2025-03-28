@@ -1,44 +1,174 @@
-.todo-input-btn{
-  background-color: rgb(184, 13, 13);
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-shadow: 1px 1px 3px rgba(243, 35, 243, 0.504);
-  font-weight: 200;
-  font-size: small;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #F5E8DC;
+  background-size: cover; /* Ensure the image covers the entire viewport */
+  background-attachment: fixed;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Default text color */
 }
-.todo-input{
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* Vibrant gradient */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 650px;
+}
+
+/* Background color for todo box */
+.todo-box {
+  background-color: #f0f0f0; /* Light background for better contrast */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Todo list container */
+.todo-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Button container for positioning buttons */
+.btn-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Input for new todo items */
+.todo-input {
   width: 100%;
-  padding: 0px 15px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 2px solid #4a90e2; /* Bright accent border */
+  background-color: #ffffff;
+  color: #333;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
-.todo-box{
-  background: #cca60d;
+
+/* Input focus effect */
+.todo-input:focus {
+  outline: none;
+  border-color: #0072ff;
+  box-shadow: 0 0 5px rgba(0, 114, 255, 0.5);
 }
-.todo-lists{
+
+/* Button to add todo */
+.todo-input-btn {
+  background-color: #ff6f61; /* Eye-catching coral color */
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect on button */
+.todo-input-btn:hover {
+  background-color: #ff3b2b; /* Darker coral shade */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Form to create new todo */
+.create-todo {
   display: flex;
   flex-direction: column;
-  gap:5px;
-  padding: 1em;
+  gap: 20px;
+  padding: 20px;
+  background-color:#c405051f; /* Clean white background */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.todo-container{
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  background-color: rgb(0, 0, 0);
+
+/* Button styles */
+.bg-prime {
+  background-color: #3b9e7f; /* Fresh green for positive action */
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-.btn-container{
+
+/* Hover effect for buttons */
+.bg-prime:hover {
+  background-color: #2f7c5a;
+}
+
+/* Custom scrollbar for todo list */
+.todo-lists::-webkit-scrollbar {
+  width: 8px;
+}
+
+.todo-lists::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.todo-lists::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+/* Text style for todo items */
+.todo-item {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12px;
+  background-color: #f7f7f7; /* Soft background for todo items */
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  gap: 5px;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.create-todo{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 10px;
-  padding: 1em;
+
+/* Hover effect for todo items */
+.todo-item:hover {
+  background-color: #eaeaea;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.bg-prime{
-  background-color: rgb(65, 97, 34);
+
+/* Completed todo items */
+.todo-item.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  color: #888;
+}
+
+/* Style for the delete icon/button */
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #e74c3c;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect on delete button */
+.delete-btn:hover {
+  color: #c0392b;
+  transform: scale(1.1);
 }
